@@ -1,27 +1,27 @@
-body{
-    background-image: url("bg-image.jpg");
+body {
+    background-image: url("bg-image.png");
     background-size: auto;
 }
 
 .check-container {
-    width:500px;
-    border:0.5px #443329 solid;
+    width: 500px;
+    border: 0.5px #443329 solid;
     background-color: #fef9d9;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
 
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 12px;
 
-    margin:auto;
+    margin: auto;
     margin-top: 10px;
 }
 
 input[type="checkbox"] {
     accent-color: #443329;
     margin-top: 10px;
-  }
-  
+}
+
 .drop-style {
     background-color: #768064;
     color: white;
@@ -30,59 +30,91 @@ input[type="checkbox"] {
 }
 
 .title {
-    width:500px;
-    border:0.5px #443329 solid;
-    background-color: #ebaa75;
-    
-    padding:5px;
-    margin:auto;
+    width: 500px;
+    border: 0.5px #443329 solid;
+    background-color: #cfbdae;
 
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    font-size:36px;
+    padding: 5px;
+    margin: auto;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 36px;
     color: #7e4e2e;
- 
-    text-align:center;
-    
+
+    text-align: center;
+
 }
 
-.subheading{
-    width:500px;
-    height:18;
-    border:0.5px #443329 solid;
+.subheading {
+    width: 500px;
+    height: 18;
+    border: 0.5px #443329 solid;
     background-color: #c8c791;
-    
-    padding:5px;
-    margin:auto;
 
-    font-family:'Times New Roman', Times, serif, 'Times New Roman', Times, serif;
-    font-size:18px;
+    padding: 5px;
+    margin: auto;
+
+    font-family: 'Times New Roman', Times, serif, 'Times New Roman', Times, serif;
+    font-size: 18px;
     color: #484f3a;
-    text-align:center;
+    text-align: center;
 }
 
-.sidebar{
+.sidebar {
     width: 250px;
     height: 100px;
-    padding:5px;
+    padding: 5px;
 
-    border:0.5px #443329 solid;
+    border: 0.5px #443329 solid;
     background-color: #d3e9f7;
 }
 
-.buttonStyle{
-    font-family:'Times New Roman', Times, serif;
+.buttonStyle {
+    font-family: 'Times New Roman', Times, serif;
     font-size: 16px;
-    border:0.5px black solid;
-    
-    display:block;
-    padding:5px;
+    border: 0.5px black solid;
+
+    display: block;
+    padding: 5px;
     margin-top: 10px;
 
     background-color: #c2c9b7;
-    color:#484f3a
+    color: #484f3a
 }
 
-.buttonStyle:hover{
+.buttonStyle:hover {
     background-color: #768064;
-    color:white;
+    color: white;
+}
+
+.image-button {
+    width: 220px;
+    height: 220px;
+
+    display: inline-block;
+}
+
+.imgbcontainer {
+    width: 750px;
+    border: 0.5px #443329 solid;
+    background-color: #cfbdae;
+    
+    padding: 5px;
+
+    margin: auto;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 36px;
+    color: #7e4e2e;
+
+    text-align: center;
+}
+
+.imglabel{
+    font-family:'Times New Roman', Times, serif; 
+    font-size:16px; 
+    text-align: center;
+
+    display:inline-block;
+    width:220px;
 }

@@ -8,6 +8,8 @@
     <meta charset="UTF-8">
     <meta name="author" content="Sydnie Williams">
     <meta name="description" content="2024-25 school year engineering project">
+    <link rel="icon" type="image/x-icon" href="cleaning-icon.png">
+
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
@@ -52,26 +54,7 @@
 
                 <input type="submit" id="submit-button" name="submit" value="Let's Go!" class ="buttonStyle">
             </form>
-            <script>
-                const form = document.getElementById("form-id");
-
-                form.addEventListener("submit", (event) => {
-                    event.preventDefault();
-
-                    const timeselect = document.getElementById("select"); //get dropdown menu
-                    var x = timeselect.selectedIndex; //get selected option
-                    var y = timeselect.options //get all options
-
-                    var boxesSelect = document.querySelectorAll("input[type='checkbox']:checked");
-                    const selectedValues = Array.from(boxesSelect).map(checkbox => checkbox.value);
-
-                    if (selectedValues <= 0) {
-                        alert("You must select at least one area!")
-                    };
-                });
-            </script>
+            <script src="script.js"></script> <!--external JS file-->
         </div>
     </div>
-    
-
 </body>
