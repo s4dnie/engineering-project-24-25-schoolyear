@@ -10,7 +10,7 @@
     <meta name="description" content="2024-25 school year engineering project">
     <link rel="icon" type="image/x-icon" href="cleaning-icon.png">
 
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!--CSS file-->
 </head>
 
 <body>
@@ -21,29 +21,28 @@
             this website is designed to help you maintain order and organize your home in efficient, easy to follow
             steps
         </div>
-        <div class="check-container">choose areas of your bedroom to get started:
-
+        <div class="instructions" id="startup">choose areas of your bedroom to get started:
             <!--button selection-->
             <form id="form-id">
-                <input type="checkbox" id="bed" value="display_bed" class="check-style">
+                <input type="checkbox" id="bed" value="bed" class="check-style">
                 <label for="bed">Bed</label>
                 <br>
-                <input type="checkbox" id="desk_vanity" value="display_desk_vanity" class="check-style">
+                <input type="checkbox" id="desk_vanity" value="desk/vanity table" class="check-style">
                 <label for="desk_vanity">Desk or Vanity Table</label>
                 <br>
-                <input type="checkbox" id="nightstand" value="display_nightstand" class="check-style">
+                <input type="checkbox" id="nightstand" value="nightstand" class="check-style">
                 <label for="nightstand">Nightstand</label>
                 <br>
-                <input type="checkbox" id="floor" value="display_floor" class="check-style">
+                <input type="checkbox" id="floor" value="floor" class="check-style">
                 <label for="floor">Floor</label>
                 <br>
-                <input type="checkbox" id="chairs_couch" value="display_chairs_couch" class="check-style">
+                <input type="checkbox" id="chairs_couch" value="chairs/couch" class="check-style">
                 <label for="chairs_couch">Chairs or Couch</label>
                 <br>
 
                 <!--timer length selection-->
 
-                <select name="select" id="select" value="select" class ="drop-style">
+                <select name="select" id="select" value="select" class="drop-style">
                     <option value="3">3 minutes</option>
                     <option value="5">5 minutes</option>
                     <option value="7">7 minutes</option>
@@ -52,9 +51,25 @@
                 <br>
                 <!--submit choices-->
 
-                <input type="submit" id="submit-button" name="submit" value="Let's Go!" class ="buttonStyle">
+                <input type="submit" id="submit-button" name="submit" value="Let's Go!" class="buttonStyle">
             </form>
-            <script src="script.js"></script> <!--external JS file-->
         </div>
     </div>
+
+    <div id = "instructions" class = "instructions">
+        <span>you will now work on: sample text</span>
+        <br>
+        You will have 5 minutes to clean as much as you can. Here are some tips:
+        <ul>
+            <li id = "do-not-attempt">Do not attempt to clean anything other than the </li>
+            <li>Use a plastic bag for trash items</li>
+            <li>Try not to get hung up on specific details; just organize as much as possible</li>
+            <li>Don't get frustrated! Just do your best 🙂</li>
+        </ul>
+        <button type="button" class = "buttonStyle">Start Cleaning!</button>
+    </div>
+    <div id = "timer-container" class = "timerBox">
+        <h1 id = "timer" class = "timerStyle">0:00</h1>
+    </div>
+    <script src="script.js" defer></script> <!--external JS file-->
 </body>
