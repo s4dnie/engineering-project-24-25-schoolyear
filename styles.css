@@ -1,110 +1,177 @@
 body {
-    background-color: #efe3d3;
+    background-color: #ece6dd;
     background-size: auto;
 }
 
-.instructions {
-    width: 500px;
-    border: 0.5px #443329 solid;
-    background-color: #fef9d9;
-    font-family: 'Times New Roman', Times, serif;
+.subtitle {
+    font-family: 'DM Sans';
+    font-size: 18px;
+    color: #1e1e20;
 
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 12px;
+    text-align: center;
+}
 
+.header-container {
+    background-color: #f6f0ea;
+    border: 1px solid #b37a45;
+
+    display: flex;
+    justify-content: space-between;
+    height: 120px;
+
+}
+
+.header-container a {
+    font-family: 'DM Sans';
+    color: #b37a45;
+    text-decoration: none;
+
+    padding: 12px;
+}
+
+.header-container a:hover {
+    color: #1e1e20;
+
+}
+
+.page-title {
+    font-family: 'Playfair Display';
+    font-size: 46px;
+    color: #1e1e20;
+
+    order: 2;
+}
+
+#form-id {
+    display: grid;
+    width: 50%;
+    padding: 10px;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+
+    justify-content: center;
+    align-items: center;
+}
+
+#startup {
+    display: flex;
+    width: 50%;
+
+    justify-content: center;
+    align-items: center;
     margin: auto;
-    margin-top: 10px;
+
+    background-color: #f6f0ea;
+    border: 1px solid #b37a45;
 }
 
 input[type="checkbox"] {
-    accent-color: #443329;
-    margin-top: 10px;
+    display: flex;
+    margin: auto;
+
+    accent-color: #b37a45;
 }
 
-.drop-style {
-    background-color: #768064;
+label {
+    text-align: center;
+
+    font-family: 'DM Sans';
+    color: #1e1e20;
+}
+
+#select {
+    grid-column: 2 / 3;
+    margin: auto;
+
+    width: 90px;
     color: white;
-    border: 0.5px #443329 solid;
-    margin-top: 10px;
+    background-color: #a7ad9f;
+
+    border: 1px solid #1e1e20;
+    border-radius: 25px;
 }
 
-.title {
-    width: 500px;
-    border: 0.5px #443329 solid;
-    background-color: #d48f55;
-
-    padding: 5px;
+#submit-button {
+    grid-row: 5 / 5;
+    grid-column: 2 / 3;
     margin: auto;
 
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 36px;
-    color: #7e4e2e;
+    width: 70px;
+    color: #ffffff;
+    background-color: #a7ad9f;
 
-    text-align: center;
-
+    border: 1px solid #1e1e20;
+    border-radius: 25px;
 }
 
-.subheading {
-    width: 500px;
-    height: 18;
-    border: 0.5px #443329 solid;
-    background-color: #c8c791;
+#submit-button:hover {
+    background-color: #797e73;
+    color: white
+}
 
-    padding: 5px;
+#info-container {
     margin: auto;
-
-    font-family: 'Times New Roman', Times, serif, 'Times New Roman', Times, serif;
-    font-size: 18px;
-    color: #484f3a;
-    text-align: center;
-}
-
-.sidebar {
-    width: 250px;
-    height: 100px;
+    width: 50%;
+    display: flex;
     padding: 5px;
 
-    border: 0.5px #443329 solid;
-    background-color: #d3e9f7;
+    border: 1px solid #b37a45;
+    background-color: #f6f0ea;
 }
 
-.buttonStyle {
-    font-family: 'Times New Roman', Times, serif;
+.heading-style {
     font-size: 16px;
-    border: 0.5px black solid;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #1e1e20;
 
+    text-align: center;
+}
+
+#explanation p {
+    font-family: 'DM Sans';
+    font-size: 14px;
+    text-indent: 20px;
+    color: #1e1e20;
+
+    padding: 5px;
+}
+
+.instructions {
+    margin: auto;
+    width: 30%;
     display: block;
     padding: 5px;
-    margin-top: 10px;
 
-    background-color: #c2c9b7;
-    color: #484f3a
+    border: 1px solid #b37a45;
+    background-color: #f6f0ea;
 }
 
-.buttonStyle:hover {
-    background-color: #768064;
-    color: white;
+.list-item {
+    font-family: 'DM Sans';
+    font-size: 14px;
+    color: #1e1e20;
 }
 
-.timerStyle {
-    text-align:center;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+.timer {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 64px;
-
-    color:#e74646;
+    color: #ac3030;
 }
 
-.timerBox {
-    width: 500px;
-    border: 0.5px #443329 solid;
-    background-color: #fef9d9;
-    font-family: 'Times New Roman', Times, serif;
+.start-button {
+    margin:auto;
+    display: block;
 
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 12px;
+    width: 105px;
+    color: #ffffff;
+    background-color: #a7ad9f;
 
-    margin: auto;
-    margin-top: 10px;
+    border: 1px solid #1e1e20;
+    border-radius: 25px;
+}
+
+.start-button:hover {
+    background-color: #797e73;
+    color: white;
 }
