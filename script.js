@@ -1,72 +1,102 @@
+const form = document.getElementById("form-id"); //form where user selects areas to clean + break length
+const program = document.getElementById("program"); //container for the cleaning instructions
+const subtitle = document.getElementById("area"); //title that indicates where user cleans
+const timeDisplay = document.querySelector(".timer"); //timer display
+const button = document.getElementById("start"); //timer start button
+const breakScreen = document.getElementById("break-screen"); //break screen
+const timeDisplay2 = document.getElementById("break-timer"); //break timer display
+const audio = new Audio("alert_soundeffect.mp3");
+
 $("#program").hide();
+$("#break-screen").hide();
+$("#end-screen").hide();
 
-const form = document.getElementById("form-id");
-const timeDisplay = document.querySelector(".timer");
-const button = document.getElementById("start");
+function getSelectedOptions() {
+    const timeselect = document.getElementById("select"); //get dropdown menu
+    let x = timeselect.selectedIndex;
+    let y = timeselect.options;
+    let breaklength = y[x].value; //get selected break length
 
+    let checkedboxes = document.querySelectorAll("input[type='checkbox']:checked"); //node list of checked boxes
+    let selectedValues = Array.from(checkedboxes).map(checkbox => checkbox.value); //turn checked boxes into an array
 
+    if (selectedValues <= 0) {
+        alert("You must select at least one area!");
+    } else {
+        $("#program").show();
+        $("#info").hide();
+        $("#startup").hide();
+        $("#subtitle").hide();
+    }
 
-function getValues() {
-    let timeselect;
-    let breaklength;
-    let boxesSelect;
-    let selectedValues;
+    return [selectedValues, breaklength]; //returns both the array of checked boxes and the break length in an array
+}
 
-    timeselect = document.getElementById("select"); //get dropdown menu
-    var x = timeselect.selectedIndex; //get selected option
-    var y = timeselect.options; //get all options
-    breaklength = y[x].value;
+function displayArea_Time() {
+    let values = getSelectedOptions();
+    let checkedboxes = values[0];
+    let i = 0;
+    let finish = checkedboxes.at(-1);
 
-    boxesSelect = document.querySelectorAll("input[type='checkbox']:checked"); //node list of checked boxes
-    selectedValues = Array.from(boxesSelect).map(checkbox => checkbox.value); //turn checked boxes into an array
+    function showBreak() {
+        let breaklength = values[1];
+        let num = Number(breaklength);
 
-    return [selectedValues, breaklength];
+        audio.play();
+        $("#break-screen").show();
+        $("#program").hide();
+        timer(num * 60, timeDisplay2);
+        setTimeout(() => {
+            i++;
+            audio.play();
+            $("#program").show();
+            $("#break-screen").hide();
+        }, num * 60 * 1000);
+    }
+
+    $("#start").click(() => {
+        if (i <= checkedboxes.indexOf(finish)) {
+            $("#area").text("You will now clean: " + checkedboxes[i]);
+            timer(300, timeDisplay);
+            setTimeout(showBreak, 300000);
+        } else if (i > checkedboxes.indexOf(finish)) {
+            $("#program").hide();
+            $("#break-screen").hide();
+            $("#end-screen").show();
+        }
+    })
+
+}
+
+function timer(seconds, display) {
+    let countdown;
+    const now = Date.now();
+    const then = now + seconds * 1000;
+    displayTimeLeft(seconds, display);
+
+    if (!countdown) {
+        countdown = setInterval(() => {
+            const secondsLeft = Math.round((then - Date.now()) / 1000);
+            if (secondsLeft < 0) {
+                clearInterval(countdown);
+                return;
+            }
+            displayTimeLeft(secondsLeft, display);
+        }, 1000);
+    }
+
+}
+
+function displayTimeLeft(seconds, element) {
+    const minutes = Math.floor(seconds / 60);
+    const remainderSeconds = seconds % 60;
+    const display = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
+
+    element.textContent = display;
 }
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    values = getValues();
+    displayArea_Time();
+})
 
-    if (values[0] <= 0) {
-        alert("You must select at least one area!");
-    } else {
-        $("#program").show()
-        $("#info").hide();
-        $("#startup").hide();
-        $("#subtitle").hide();
-        cyclethrough();
-    }
-});
-
-function cyclethrough() {
-    function timer(seconds) {
-        let countdown;
-        const now = Date.now();
-        const then = now + seconds * 1000;
-        displayTimeLeft(seconds);
-
-        countdown = setInterval(() => {
-            const secondsLeft = Math.round((then - Date.now()) / 1000);
-            if (secondsLeft < 0) {
-                
-                clearInterval(countdown);
-                return;
-            }
-            displayTimeLeft(secondsLeft);
-        }, 1000);
-    }
-
-    function displayTimeLeft(seconds) {
-        const minutes = Math.floor(seconds / 60);
-        const remainderSeconds = seconds % 60;
-        const display = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
-
-        timeDisplay.textContent = display;
-    }
-
-    for (let i = 0; i < values[0].length; i++) {
-        button.addEventListener("click", function () {
-            timer(300);
-        })
-    }
-}

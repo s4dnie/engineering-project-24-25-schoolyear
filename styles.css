@@ -175,3 +175,22 @@ label {
     background-color: #797e73;
     color: white;
 }
+
+#end-screen {
+    margin: auto;
+    width: 50%;
+    display: block;
+    padding: 5px;
+
+    border: 1px solid #b37a45;
+    background-color: #f6f0ea;
+}
+
+#end-screen p {
+    font-family: 'DM Sans';
+    font-size: 14px;
+    text-indent: 20px;
+    color: #1e1e20;
+
+    padding: 5px;
+}
